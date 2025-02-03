@@ -41,5 +41,8 @@ t_stack *swap(t_stack *head);
 
 void	printer(t_stack *head);
 t_stack	*next_up(int content, t_stack *down2up);
+int		checker(t_stack *head);
+
+t_stack	*solve_3(t_stack *head);
 
 #endif

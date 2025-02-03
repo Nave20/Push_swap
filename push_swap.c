@@ -16,19 +16,18 @@ int	main(int argc, char **argv)
 {
 	t_stack	*head_A;
 	t_stack *head_B;
+	t_stack *ptr;
 
 	head_B = NULL;
 	if (!argv[1])
 		return (ft_printf("value ???"));
 	head_A = new_stack(argv);
-	head_A = rotate(head_A);
-	head_B = push(&head_A, head_B);
-	head_A = swap(head_A);
+	ptr = head_A -> up2down;
 	printer(head_A);
 	ft_printf("\n");
-	stack_rounder(head_B);
-	printer(head_B);
+	//head_A = swap(head_A);
+	head_A = solve_3(head_A);
+	printer(head_A);
 	stack_killer(head_A);
-	stack_killer(head_B);
 	return (0);
 }

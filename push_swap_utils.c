@@ -37,3 +37,20 @@ t_stack	*next_up(int content, t_stack *down2up)
 	new -> down2up = down2up;
 	return (new);
 }
+
+int	checker(t_stack *head)
+{
+	t_stack	*ptr;
+	t_stack	*ptr2;
+
+	ptr = head -> up2down;
+	ptr2 = head;
+	while (ptr != head)
+	{
+		if (ptr2 -> content < ptr -> content)
+			return (0);
+		ptr2 = ptr;
+		ptr = ptr -> up2down;
+	}
+	return (1);
+}
