@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_error.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpirotti <vpirotti@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/31 12:21:45 by vpirotti          #+#    #+#             */
-/*   Updated: 2025/01/31 12:21:45 by vpirotti         ###   ########.fr       */
+/*   Created: 2025/02/03 15:17:51 by vpirotti          #+#    #+#             */
+/*   Updated: 2025/02/03 15:17:51 by vpirotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	stack_no_rep(t_stack *head)
 {
-	t_stack	*head_A;
-	t_stack *head_B;
 	t_stack *ptr;
+	t_stack *ptr2;
 
-	head_B = NULL;
-	if (!argv[1])
-		return (ft_printf("value ???"));
-	head_A = new_stack(argv);
-	if (stack_no_rep(head_A) != 1)
-		return (stack_killer(head_A), ft_printf("Rep in stack\n"));
-	printer(head_A);
-	stack_killer(head_A);
-	return (0);
+	ptr = head -> up2down;
+	ptr2 = ptr -> up2down;
+	while (ptr != head)
+	{
+		while (ptr2 != ptr)
+		{
+			if (ptr -> content == ptr2 -> content)
+				return (0);
+			ptr2 = ptr2 -> up2down;
+		}
+		ptr = ptr -> up2down;
+	}
+	return (1);
 }

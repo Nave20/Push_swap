@@ -20,7 +20,7 @@
 
 typedef struct t_stack
 {
-	int				content;
+	long			content;
 	struct t_stack	*up2down;
 	struct t_stack	*down2up;
 }	t_stack;
@@ -44,5 +44,7 @@ t_stack	*next_up(int content, t_stack *down2up);
 int		checker(t_stack *head);
 
 t_stack	*solve_3(t_stack *head);
+
+int		stack_no_rep(t_stack *head);
 
 #endif
