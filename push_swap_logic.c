@@ -25,9 +25,9 @@ t_stack	*solve_3(t_stack *head)
 		return (rotate(head));
 	if (checker(ptr2) == 1)
 		return (reverse_rotate(head));
-	if (ptr -> content > head -> content && ptr -> content > ptr2 -> content)
+	if (ptr -> content < head -> content && ptr -> content < ptr2 -> content)
 		return (swap(head));
-	if (head -> content < ptr -> content)
+	if (head -> content > ptr -> content)
 	{
 		head = swap(head);
 		return (reverse_rotate(head));
@@ -68,11 +68,7 @@ void	target_min(t_stack *head_A, t_stack *head_B)
 	{
 		while (node_b != head_B)
 		{
-			target = node_a -> target;
-			if (node_a ->content > node_b ->content
-				&& target ->content < node_b ->content)
-					node_a -> target = node_b;
-			node_b = node_b -> up2down;
+
 		}
 		if (!node_a -> target)
 			target_max(node_a, head_B);

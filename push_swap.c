@@ -20,17 +20,23 @@ int	main(int argc, char **argv)
 
 	head_B = NULL;
 	if (!argv[1])
-		return (ft_printf("value ???"));
+		return (ft_printf("error\n"));
 	head_A = new_stack(argv);
 	if (stack_no_rep(head_A) != 1)
-		return (stack_killer(head_A), ft_printf("Rep in stack\n"));
+		return (stack_killer(head_A), ft_printf("error\n"));
+	if (checker(head_A) == 1)
+		return (stack_killer(head_A), 0);
 	head_B = push(&head_A, head_B);
 	head_B = push(&head_A, head_B);
 	head_B = push(&head_A, head_B);
 	head_B = push(&head_A, head_B);
-	target_max(head_A, head_B);
+	target_min(head_A, head_B);
+	ptr = head_A ->up2down;
+	ft_printf("\n%d", ptr -> content);
+	ptr = ptr -> target;
+	ft_printf("-> %d \n\n", ptr -> content);
 	printer(head_A);
-	ft_printf("\n");
+	ft_printf("\n\n");
 	printer(head_B);
 	stack_killer(head_A);
 	stack_killer(head_B);

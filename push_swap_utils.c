@@ -47,7 +47,7 @@ int	checker(t_stack *head)
 	ptr2 = head;
 	while (ptr != head)
 	{
-		if (ptr2 -> content < ptr -> content)
+		if (ptr2 -> content > ptr -> content)
 			return (0);
 		ptr2 = ptr;
 		ptr = ptr -> up2down;
