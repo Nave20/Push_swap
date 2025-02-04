@@ -17,8 +17,10 @@ void	stack_rounder(t_stack *head)
 	t_stack	*ptr;
 
 	ptr = head;
-	while (ptr -> up2down)
+	ptr = ptr -> up2down;
+	while (ptr -> up2down && ptr != head)
 	{
+		ft_printf("test");
 		ptr = ptr -> up2down;
 	}
 	head -> down2up = ptr;

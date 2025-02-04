@@ -46,20 +46,26 @@ t_stack	*push(t_stack **head_a, t_stack *head_b)
 {
 	t_stack	*ptr;
 	t_stack *ptr2;
+	t_stack *ptr3;
 
 	ptr = stack_extract(*head_a);
 	if (!head_b)
 	{
 		head_b = *head_a;
 		*head_a = ptr;
+		head_b -> up2down = head_b;
+		head_b -> down2up = head_b;
 		return (head_b);
 	}
 	else
 	{
+		ptr3 = head_b -> down2up;
 		head_b -> down2up = *head_a;
 		ptr2 = *head_a;
 		ptr2 -> up2down = head_b;
 		head_b = *head_a;
+		head_b -> down2up = ptr3;
+		ptr3 -> up2down = head_b;
 		*head_a = ptr;
 		return (head_b);
 	}

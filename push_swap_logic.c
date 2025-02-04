@@ -46,12 +46,13 @@ void	target_max(t_stack *node_a, t_stack *head_B)
 
 	node_b = head_B -> up2down;
 	target = node_b;
+	node_a -> target = node_b;
 	while (node_b != head_B)
 	{
+		node_b = node_b -> up2down;
 		target = node_a -> target;
 		if (target -> content < node_b -> content)
 			node_a -> target = node_b;
-		node_b = node_b -> up2down;
 	}
 }
 

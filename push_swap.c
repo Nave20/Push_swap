@@ -24,7 +24,15 @@ int	main(int argc, char **argv)
 	head_A = new_stack(argv);
 	if (stack_no_rep(head_A) != 1)
 		return (stack_killer(head_A), ft_printf("Rep in stack\n"));
+	head_B = push(&head_A, head_B);
+	head_B = push(&head_A, head_B);
+	head_B = push(&head_A, head_B);
+	head_B = push(&head_A, head_B);
+	target_max(head_A, head_B);
 	printer(head_A);
+	ft_printf("\n");
+	printer(head_B);
 	stack_killer(head_A);
+	stack_killer(head_B);
 	return (0);
 }
