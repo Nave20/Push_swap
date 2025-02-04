@@ -2,7 +2,7 @@ SOURCES =	\
 
 OBJS	=	${SOURCES:.c=.o}
 
-HEADER	=	ft_printf.h
+HEADER	=	push_swap.h
 
 LIB = libft/libft.a
 

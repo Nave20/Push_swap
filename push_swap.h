@@ -23,6 +23,7 @@ typedef struct t_stack
 	long			content;
 	struct t_stack	*up2down;
 	struct t_stack	*down2up;
+	struct t_stack	*target;
 }	t_stack;
 
 int		ft_atoi(const char *str);

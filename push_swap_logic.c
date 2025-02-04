@@ -38,3 +38,43 @@ t_stack	*solve_3(t_stack *head)
 		return (rotate(head));
 	}
 }
+
+void	target_max(t_stack *node_a, t_stack *head_B)
+{
+	t_stack	*target;
+	t_stack *node_b;
+
+	node_b = head_B -> up2down;
+	target = node_b;
+	while (node_b != head_B)
+	{
+		target = node_a -> target;
+		if (target -> content < node_b -> content)
+			node_a -> target = node_b;
+		node_b = node_b -> up2down;
+	}
+}
+
+void	target_min(t_stack *head_A, t_stack *head_B)
+{
+	t_stack	*node_a;
+	t_stack *node_b;
+	t_stack *target;
+
+	node_a = head_A -> up2down;
+	node_b = head_B -> up2down;
+	while (node_a != head_A)
+	{
+		while (node_b != head_B)
+		{
+			target = node_a -> target;
+			if (node_a ->content > node_b ->content
+				&& target ->content < node_b ->content)
+					node_a -> target = node_b;
+			node_b = node_b -> up2down;
+		}
+		if (!node_a -> target)
+			target_max(node_a, head_B);
+		node_a = node_a -> up2down;
+	}
+}
