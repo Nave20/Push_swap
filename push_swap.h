@@ -45,7 +45,8 @@ t_stack	*next_up(int content, t_stack *down2up);
 int		checker(t_stack *head);
 
 t_stack	*solve_3(t_stack *head);
-void	target_min(t_stack *head_A, t_stack *head_B);
+void	target(t_stack *head_A, t_stack *head_B);
+void	target_min(t_stack *node_a, t_stack *head_B);
 void	target_max(t_stack *node_a, t_stack *head_B);
 
 int		stack_no_rep(t_stack *head);

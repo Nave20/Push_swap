@@ -46,32 +46,53 @@ void	target_max(t_stack *node_a, t_stack *head_B)
 
 	node_b = head_B -> up2down;
 	target = node_b;
-	node_a -> target = node_b;
+	node_a -> target = head_B;
+	while (node_b != head_B)
+	{
+		target = node_a -> target;
+		if (target -> content < node_b -> content)
+			node_a -> target = node_b;
+		node_b = node_b -> up2down;
+	}
+}
+
+void	target_min(t_stack *node_a, t_stack *head_B)
+{
+	t_stack	*target;
+	t_stack *node_b;
+
+	node_b = head_B -> up2down;
+	target = node_b;
+	node_a -> target = head_B;
 	while (node_b != head_B)
 	{
 		node_b = node_b -> up2down;
 		target = node_a -> target;
-		if (target -> content < node_b -> content)
+		if (target -> content < node_b -> content
+			&& node_b -> content < node_a -> content)
+				node_a -> target = node_b;
+		else if (target -> content > node_a -> content)
 			node_a -> target = node_b;
 	}
 }
 
-void	target_min(t_stack *head_A, t_stack *head_B)
+void	target(t_stack *head_A, t_stack *head_B)
 {
-	t_stack	*node_a;
-	t_stack *node_b;
-	t_stack *target;
+	t_stack	*target;
+	t_stack *node_a;
 
 	node_a = head_A -> up2down;
-	node_b = head_B -> up2down;
+	target_min(node_a, head_B);
+	target = node_a -> target;
+	if (target -> content > node_a -> content)
+		target_max(node_a, head_B);
 	while (node_a != head_A)
 	{
-		while (node_b != head_B)
-		{
-
-		}
-		if (!node_a -> target)
-			target_max(node_a, head_B);
 		node_a = node_a -> up2down;
+		ft_printf("node_a : %d\n", node_a -> content);
+		target_min(node_a, head_B);
+		target = node_a -> target;
+		if (target -> content > node_a -> content)
+			target_max(node_a, head_B);
 	}
 }
