@@ -38,6 +38,23 @@ t_stack	*next_up(int content, t_stack *down2up)
 	return (new);
 }
 
+int	index(t_stack *head, t_stack *node)
+{
+	int	i;
+	t_stack	*ptr;
+
+	i = 0;
+	if (head == node)
+		return (i);
+	ptr = head -> up2down;
+	while (ptr != node)
+	{
+		ptr = ptr -> up2down;
+		i++;
+	}
+	return (i);
+}
+
 int	checker(t_stack *head)
 {
 	t_stack	*ptr;

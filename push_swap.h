@@ -18,13 +18,13 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-typedef struct t_stack
+typedef struct s_stack
 {
 	long			content;
 	int				cost;
-	struct t_stack	*up2down;
-	struct t_stack	*down2up;
-	struct t_stack	*target;
+	struct s_stack	*up2down;
+	struct s_stack	*down2up;
+	struct s_stack	*target;
 }	t_stack;
 
 int		ft_atoi(const char *str);
