@@ -20,7 +20,6 @@ void	stack_rounder(t_stack *head)
 	ptr = ptr -> up2down;
 	while (ptr -> up2down && ptr != head)
 	{
-		ft_printf("test");
 		ptr = ptr -> up2down;
 	}
 	head -> down2up = ptr;
@@ -67,10 +66,10 @@ void	stack_killer(t_stack *head)
 	free(ptr);
 }
 
-t_stack	*stack_extract(t_stack *head) //we keep extract without touching head
+t_stack	*stack_extract(t_stack *head)
 {
 	t_stack	*ptr;
-	t_stack *ptr2;
+	t_stack	*ptr2;
 
 	ptr = head -> down2up;
 	ptr2 = head -> up2down;
@@ -78,7 +77,7 @@ t_stack	*stack_extract(t_stack *head) //we keep extract without touching head
 	ptr2 -> down2up = ptr;
 	head -> up2down = NULL;
 	head -> down2up = NULL;
-	return (ptr2); //new head for stack A
+	return (ptr2);
 }
 
 int	stack_count(t_stack *head)

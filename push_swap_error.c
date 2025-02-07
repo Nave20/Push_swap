@@ -14,8 +14,8 @@
 
 int	stack_no_rep(t_stack *head)
 {
-	t_stack *ptr;
-	t_stack *ptr2;
+	t_stack	*ptr;
+	t_stack	*ptr2;
 
 	ptr = head -> up2down;
 	ptr2 = ptr -> up2down;

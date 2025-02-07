@@ -15,7 +15,7 @@
 t_stack	*solve_3(t_stack *head)
 {
 	t_stack	*ptr;
-	t_stack *ptr2;
+	t_stack	*ptr2;
 
 	ptr = head -> up2down;
 	ptr2 = ptr -> up2down;
@@ -42,7 +42,7 @@ t_stack	*solve_3(t_stack *head)
 void	target_max(t_stack *node_a, t_stack *head_B)
 {
 	t_stack	*target;
-	t_stack *node_b;
+	t_stack	*node_b;
 
 	node_b = head_B -> up2down;
 	target = node_b;
@@ -59,7 +59,7 @@ void	target_max(t_stack *node_a, t_stack *head_B)
 void	target_min(t_stack *node_a, t_stack *head_B)
 {
 	t_stack	*target;
-	t_stack *node_b;
+	t_stack	*node_b;
 
 	node_b = head_B -> up2down;
 	target = node_b;
@@ -70,7 +70,7 @@ void	target_min(t_stack *node_a, t_stack *head_B)
 		target = node_a -> target;
 		if (target -> content < node_b -> content
 			&& node_b -> content < node_a -> content)
-				node_a -> target = node_b;
+			node_a -> target = node_b;
 		else if (target -> content > node_a -> content)
 			node_a -> target = node_b;
 	}
@@ -79,7 +79,7 @@ void	target_min(t_stack *node_a, t_stack *head_B)
 void	target(t_stack *head_A, t_stack *head_B)
 {
 	t_stack	*target;
-	t_stack *node_a;
+	t_stack	*node_a;
 
 	node_a = head_A -> up2down;
 	target_min(node_a, head_B);

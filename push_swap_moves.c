@@ -24,11 +24,11 @@ t_stack	*rotate(t_stack *head)
 	return (head);
 }
 
-t_stack *swap(t_stack *head)
+t_stack	*swap(t_stack *head)
 {
-	t_stack *ptr;
-	t_stack *ptr2;
-	t_stack *ptr3;
+	t_stack	*ptr;
+	t_stack	*ptr2;
+	t_stack	*ptr3;
 
 	ptr = head -> down2up;
 	ptr2 = head -> up2down;
@@ -45,8 +45,8 @@ t_stack *swap(t_stack *head)
 t_stack	*push(t_stack **head_a, t_stack *head_b)
 {
 	t_stack	*ptr;
-	t_stack *ptr2;
-	t_stack *ptr3;
+	t_stack	*ptr2;
+	t_stack	*ptr3;
 
 	ptr = stack_extract(*head_a);
 	if (!head_b)
