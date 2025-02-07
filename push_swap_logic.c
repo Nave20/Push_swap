@@ -89,7 +89,6 @@ void	target(t_stack *head_A, t_stack *head_B)
 	while (node_a != head_A)
 	{
 		node_a = node_a -> up2down;
-		ft_printf("node_a : %d\n", node_a -> content);
 		target_min(node_a, head_B);
 		target = node_a -> target;
 		if (target -> content > node_a -> content)
