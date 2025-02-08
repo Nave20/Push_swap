@@ -41,5 +41,5 @@ void	ss(t_stack **head_a, t_stack **head_b)
 void	pa(t_stack **head_a, t_stack **head_b)
 {
 	ft_printf("pa\n");
-	*head_b = push(head_a, *head_b);
+	*head_a = push(head_b, *head_a);
 }

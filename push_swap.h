@@ -76,4 +76,6 @@ void	pa(t_stack **head_a, t_stack **head_b);
 
 void	pb(t_stack **head_a, t_stack **head_b);
 
+void	solver(t_stack **head_a, t_stack **head_b);
+
 #endif

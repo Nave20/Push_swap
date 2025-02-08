@@ -27,13 +27,7 @@ int	main(int argc, char **argv)
 		return (stack_killer(head_a), ft_printf("error\n"));
 	if (checker(head_a) == 1)
 		return (stack_killer(head_a), 0);
-	target(head_a, head_b);
-	cost(head_a, head_b);
-	ptr = to_move(head_a);
-	ft_printf("to move -> %d\n", ptr -> content);
-	printer(head_a);
-	ft_printf("\n\n");
-	printer(head_b);
+	solver(&head_a, &head_b);
 	stack_killer(head_a);
 	stack_killer(head_b);
 	return (0);

@@ -15,5 +15,5 @@
 void	pb(t_stack **head_a, t_stack **head_b)
 {
 	ft_printf("pb\n");
-	*head_a = push(head_b, *head_a);
+	*head_b = push(head_a, *head_b);
 }

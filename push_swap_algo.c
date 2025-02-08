@@ -12,22 +12,6 @@
 
 #include "push_swap.h"
 
-void	solver(t_stack **head_a, t_stack **head_b)
-{
-	t_stack	*node_a;
-
-	*head_b = push(head_a, *head_b);
-	*head_b = push(head_a, *head_b);
-	while (stack_count(*head_a) > 3)
-	{
-		target(*head_a, *head_b);
-		cost(*head_a, *head_b);
-		node_a = to_move(*head_a);
-	}
-	*head_a = solve_3(*head_a);
-
-}
-
 int	up_or_down(t_stack *node_a)
 {
 	t_stack	*target;
@@ -96,25 +80,39 @@ void	p_move(t_stack *node_a, t_stack **head_a, t_stack **head_b)
 
 void	mover(t_stack *node_a, t_stack **head_a, t_stack **head_b)
 {
-	t_stack	*target;
 	int		direction;
 
-	target = node_a -> target;
 	direction = up_or_down(node_a);
 	if (direction < 0)
 	{
 		n_move(node_a, head_a, head_b);
-		*head_b = push(head_a, *head_b);
+		pb(head_a, head_b);
 	}
 	else if (direction > 0)
 	{
 		p_move(node_a, head_a, head_b);
-		*head_b = push(head_a, *head_b);
+		pb(head_a, head_b);
 	}
 	else
 	{
 		n_move(node_a, head_a, head_b);
 		p_move(node_a, head_a, head_b);
-		*head_b = push(head_a, *head_b);
+		pb(head_a, head_b);
 	}
+}
+
+void	solver(t_stack **head_a, t_stack **head_b)
+{
+	t_stack	*node_a;
+
+	pb(head_a, head_b);
+	pb(head_a, head_b);
+	while (stack_count(*head_a) > 3)
+	{
+		target(*head_a, *head_b);
+		cost(*head_a, *head_b);
+		node_a = to_move(*head_a);
+		mover(node_a, head_a, head_b);
+	}
+	*head_a = solve_3(*head_a);
 }
