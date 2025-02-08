@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	pa(t_stack **head_a, t_stack **head_b)
+void	pb(t_stack **head_a, t_stack **head_b)
 {
 	ft_printf("pb\n");
 	*head_a = push(head_b, *head_a);

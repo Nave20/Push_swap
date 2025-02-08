@@ -62,4 +62,18 @@ void	cost(t_stack *head_a, t_stack *head_b);
 void	cost_logic(t_stack *node_a);
 t_stack	*to_move(t_stack *head_a);
 
+void	ra(t_stack **head_a);
+void	rb(t_stack **head_b);
+void	rr(t_stack **head_a, t_stack **head_b);
+void	rra(t_stack **head_a);
+void	rrb(t_stack **head_b);
+
+void	rrr(t_stack **head_a, t_stack **head_b);
+void	sa(t_stack **head_a);
+void	sb(t_stack **head_b);
+void	ss(t_stack **head_a, t_stack **head_b);
+void	pa(t_stack **head_a, t_stack **head_b);
+
+void	pb(t_stack **head_a, t_stack **head_b);
+
 #endif
