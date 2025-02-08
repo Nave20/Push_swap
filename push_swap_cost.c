@@ -46,6 +46,23 @@ int	smallest(int a, int b)
 		return (b);
 }
 
+void	cost_logic(t_stack *node_a)
+{
+	t_stack	*target;
+
+	target = node_a -> target;
+	if (node_a -> p_moves > 0 && target -> n_moves < 0
+			|| node_a -> n_moves < 0 && target -> p_moves > 0)
+	{
+		node_a -> cost = node_a -> p_moves + (node_a ->n_moves) * -1
+			+ (target -> n_moves) * -1 + target -> p_moves;
+	}
+	else if (node_a -> p_moves > 0 || target -> p_moves > 0)
+		node_a -> cost = greatest(node_a ->p_moves, target->p_moves);
+	else //if (node_a -> n_moves < 0 || target -> n_moves < 0)
+		node_a -> cost = smallest(node_a ->n_moves, target->n_moves) * -1;
+}
+
 void	cost(t_stack *head_a, t_stack *head_b)
 {
 	t_stack	*node_a;
@@ -53,20 +70,27 @@ void	cost(t_stack *head_a, t_stack *head_b)
 
 	to_head(head_a);
 	to_head(head_b);
+	cost_logic(head_a);
 	node_a = head_a -> up2down;
 	while (node_a != head_a)
 	{
-		target = node_a -> target;
-		if (node_a -> p_moves > 0 && target -> n_moves < 0
-			|| node_a -> n_moves < 0 && target -> p_moves > 0)
-		{
-			node_a -> cost = node_a -> p_moves + (node_a ->n_moves) * -1
-				+ (target -> n_moves) * -1 + target -> p_moves;
-		}
-		else if (node_a -> p_moves > 0 || target -> p_moves > 0)
-			node_a -> cost = greatest(node_a ->p_moves, target->p_moves);
-		else if (node_a -> n_moves < 0 || target -> n_moves < 0)
-			node_a -> cost = smallest(node_a ->n_moves, target->n_moves) * -1;
+		cost_logic(node_a);
 		node_a = node_a -> up2down;
 	}
+}
+
+t_stack	*to_move(t_stack *head_a)
+{
+	t_stack	*node_a;
+	t_stack *to_move;
+
+	to_move = head_a;
+	node_a = head_a -> up2down;
+	while (node_a != head_a)
+	{
+		if (node_a -> cost < to_move -> cost)
+			to_move = node_a;
+		node_a = node_a -> up2down;
+	}
+	return (to_move);
 }

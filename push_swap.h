@@ -59,5 +59,7 @@ int		stack_no_rep(t_stack *head);
 
 void	to_head(t_stack *head_a);
 void	cost(t_stack *head_a, t_stack *head_b);
+void	cost_logic(t_stack *node_a);
+t_stack	*to_move(t_stack *head_a);
 
 #endif

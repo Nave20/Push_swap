@@ -35,6 +35,11 @@ t_stack	*next_up(int content, t_stack *down2up)
 		return (NULL);
 	new -> content = content;
 	new -> down2up = down2up;
+	new -> cost = 0;
+	new -> to_head = 0;
+	new -> p_moves = 0;
+	new -> n_moves = 0;
+	new -> target = NULL;
 	return (new);
 }
 

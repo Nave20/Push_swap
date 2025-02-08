@@ -34,11 +34,10 @@ t_stack	*new_stack(char **argv)
 	int		i;
 
 	i = 1;
-	new = malloc (sizeof(t_stack));
+	new = next_up(ft_atoi(argv[i]), NULL);
 	if (!new)
 		return (NULL);
 	next = new;
-	new -> content = ft_atoi(argv[i]);
 	while (argv[++i])
 	{
 		temp = next_up(ft_atoi(argv[i]), next);
