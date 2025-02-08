@@ -39,15 +39,15 @@ t_stack	*solve_3(t_stack *head)
 	}
 }
 
-void	target_max(t_stack *node_a, t_stack *head_B)
+void	target_max(t_stack *node_a, t_stack *head_b)
 {
 	t_stack	*target;
 	t_stack	*node_b;
 
-	node_b = head_B -> up2down;
+	node_b = head_b -> up2down;
 	target = node_b;
-	node_a -> target = head_B;
-	while (node_b != head_B)
+	node_a -> target = head_b;
+	while (node_b != head_b)
 	{
 		target = node_a -> target;
 		if (target -> content < node_b -> content)
@@ -56,15 +56,15 @@ void	target_max(t_stack *node_a, t_stack *head_B)
 	}
 }
 
-void	target_min(t_stack *node_a, t_stack *head_B)
+void	target_min(t_stack *node_a, t_stack *head_b)
 {
 	t_stack	*target;
 	t_stack	*node_b;
 
-	node_b = head_B -> up2down;
+	node_b = head_b -> up2down;
 	target = node_b;
-	node_a -> target = head_B;
-	while (node_b != head_B)
+	node_a -> target = head_b;
+	while (node_b != head_b)
 	{
 		node_b = node_b -> up2down;
 		target = node_a -> target;
@@ -76,22 +76,22 @@ void	target_min(t_stack *node_a, t_stack *head_B)
 	}
 }
 
-void	target(t_stack *head_A, t_stack *head_B)
+void	target(t_stack *head_A, t_stack *head_b)
 {
 	t_stack	*target;
 	t_stack	*node_a;
 
 	node_a = head_A -> up2down;
-	target_min(node_a, head_B);
+	target_min(node_a, head_b);
 	target = node_a -> target;
 	if (target -> content > node_a -> content)
-		target_max(node_a, head_B);
+		target_max(node_a, head_b);
 	while (node_a != head_A)
 	{
 		node_a = node_a -> up2down;
-		target_min(node_a, head_B);
+		target_min(node_a, head_b);
 		target = node_a -> target;
 		if (target -> content > node_a -> content)
-			target_max(node_a, head_B);
+			target_max(node_a, head_b);
 	}
 }

@@ -22,6 +22,9 @@ typedef struct s_stack
 {
 	long			content;
 	int				cost;
+	int				to_head;
+	int				p_moves;
+	int				n_moves;
 	struct s_stack	*up2down;
 	struct s_stack	*down2up;
 	struct s_stack	*target;
@@ -43,13 +46,16 @@ t_stack	*swap(t_stack *head);
 
 void	printer(t_stack *head);
 t_stack	*next_up(int content, t_stack *down2up);
+int		stack_index(t_stack *head, t_stack *node);
 int		checker(t_stack *head);
 
 t_stack	*solve_3(t_stack *head);
-void	target(t_stack *head_A, t_stack *head_B);
-void	target_min(t_stack *node_a, t_stack *head_B);
-void	target_max(t_stack *node_a, t_stack *head_B);
+void	target(t_stack *head_A, t_stack *head_b);
+void	target_min(t_stack *node_a, t_stack *head_b);
+void	target_max(t_stack *node_a, t_stack *head_b);
 
 int		stack_no_rep(t_stack *head);
+
+void	to_head(t_stack *head_a);
 
 #endif
