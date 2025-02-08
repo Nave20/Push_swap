@@ -27,10 +27,6 @@ int	main(int argc, char **argv)
 		return (stack_killer(head_a), ft_printf("error\n"));
 	if (checker(head_a) == 1)
 		return (stack_killer(head_a), 0);
-	head_b = push(&head_a, head_b);
-	head_b = push(&head_a, head_b);
-	head_b = push(&head_a, head_b);
-	head_b = push(&head_a, head_b);
 	target(head_a, head_b);
 	cost(head_a, head_b);
 	ptr = to_move(head_a);
