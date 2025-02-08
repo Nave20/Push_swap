@@ -72,3 +72,11 @@ int	checker(t_stack *head)
 	}
 	return (1);
 }
+
+int	greatest(int a, int b)
+{
+	if (a >= b)
+		return (a);
+	else
+		return (b);
+}

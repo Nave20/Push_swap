@@ -38,6 +38,14 @@ void	to_head(t_stack *head_a)
 	}
 }
 
+int	smallest(int a, int b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
+}
+
 void	cost(t_stack *head_a, t_stack *head_b)
 {
 	t_stack	*node_a;
@@ -48,7 +56,17 @@ void	cost(t_stack *head_a, t_stack *head_b)
 	node_a = head_a -> up2down;
 	while (node_a != head_a)
 	{
-
+		target = node_a -> target;
+		if (node_a -> p_moves > 0 && target -> n_moves < 0
+			|| node_a -> n_moves < 0 && target -> p_moves > 0)
+		{
+			node_a -> cost = node_a -> p_moves + (node_a ->n_moves) * -1
+				+ (target -> n_moves) * -1 + target -> p_moves;
+		}
+		else if (node_a -> p_moves > 0 || target -> p_moves > 0)
+			node_a -> cost = greatest(node_a ->p_moves, target->p_moves);
+		else if (node_a -> n_moves < 0 || target -> n_moves < 0)
+			node_a -> cost = smallest(node_a ->n_moves, target->n_moves) * -1;
 		node_a = node_a -> up2down;
 	}
 }

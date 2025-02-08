@@ -48,6 +48,7 @@ void	printer(t_stack *head);
 t_stack	*next_up(int content, t_stack *down2up);
 int		stack_index(t_stack *head, t_stack *node);
 int		checker(t_stack *head);
+int		greatest(int a, int b);
 
 t_stack	*solve_3(t_stack *head);
 void	target(t_stack *head_A, t_stack *head_b);
@@ -57,5 +58,6 @@ void	target_max(t_stack *node_a, t_stack *head_b);
 int		stack_no_rep(t_stack *head);
 
 void	to_head(t_stack *head_a);
+void	cost(t_stack *head_a, t_stack *head_b);
 
 #endif

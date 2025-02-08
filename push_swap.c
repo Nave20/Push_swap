@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	t_stack	*head_a;
 	t_stack *head_b;
 	t_stack *ptr;
+	t_stack	*target2;
 
 	head_b = NULL;
 	if (!argv[1])
@@ -31,8 +32,13 @@ int	main(int argc, char **argv)
 	head_b = push(&head_a, head_b);
 	head_b = push(&head_a, head_b);
 	target(head_a, head_b);
+	cost(head_a, head_b);
 	ptr = head_a;
-	ft_printf("to head -> %d\n", ptr -> to_head);
+	target2 = ptr -> target;
+	ft_printf("node_a -> %d\n", ptr -> content);
+	ft_printf("target -> %d\n",target2 -> content);
+	ft_printf("n_moves target -> %d\n",target2 -> n_moves);
+	ft_printf("cost -> %d\n", ptr -> cost);
 	printer(head_a);
 	ft_printf("\n\n");
 	printer(head_b);
