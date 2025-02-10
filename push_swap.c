@@ -31,10 +31,8 @@ int	main(int argc, char **argv)
 		return (stack_killer(head_a), 0);
 	solver(&head_a, &head_b);
 	printer(head_a);
-	ft_printf("\n");
-	printer(head_b);
+	// ft_printf("\n");
+	// printer(head_b);
 	stack_killer(head_a);
-
-	// stack_killer(head_b);
 	return (0);
 }

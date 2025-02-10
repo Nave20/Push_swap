@@ -84,4 +84,6 @@ void	n_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 void	p_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 void	mover_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 
+void	target_second(t_stack *head_a, t_stack *head_b);
+
 #endif
