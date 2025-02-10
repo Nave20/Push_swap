@@ -7,3 +7,4 @@ libftTester
 main.c
 *.a
 visualizer
+imgui.ini

@@ -76,6 +76,11 @@ void	pa(t_stack **head_a, t_stack **head_b);
 
 void	pb(t_stack **head_a, t_stack **head_b);
 
+int		up_or_down(t_stack *node_a);
 void	solver(t_stack **head_a, t_stack **head_b);
+
+void	n_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
+void	p_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
+void	mover_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 
 #endif

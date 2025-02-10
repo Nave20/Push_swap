@@ -21,22 +21,23 @@ t_stack	*solve_3(t_stack *head)
 	ptr2 = ptr -> up2down;
 	if (checker(head) == 1)
 		return (head);
-	if (checker(ptr) == 1)
-		return (rotate(head));
-	if (checker(ptr2) == 1)
-		return (reverse_rotate(head));
-	if (ptr -> content < head -> content && ptr -> content < ptr2 -> content)
-		return (swap(head));
-	if (head -> content > ptr -> content)
+	else if (checker(ptr) == 1)
+		ra(&head);
+	else if (checker(ptr2) == 1)
+		rra(&head);
+	else if (ptr -> content < head -> content && ptr -> content < ptr2 -> content)
+		sa(&head);
+	else if (head -> content > ptr -> content)
 	{
-		head = swap(head);
-		return (reverse_rotate(head));
+		sa(&head);
+		rra(&head);
 	}
 	else
 	{
-		head = swap(head);
-		return (rotate(head));
+		sa(&head);
+		ra(&head);
 	}
+	return (head);
 }
 
 void	target_max(t_stack *node_a, t_stack *head_b)

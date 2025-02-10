@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
 	t_stack	*head_a;
@@ -29,6 +31,6 @@ int	main(int argc, char **argv)
 		return (stack_killer(head_a), 0);
 	solver(&head_a, &head_b);
 	stack_killer(head_a);
-	stack_killer(head_b);
+	// stack_killer(head_b);
 	return (0);
 }

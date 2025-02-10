@@ -103,16 +103,26 @@ void	mover(t_stack *node_a, t_stack **head_a, t_stack **head_b)
 
 void	solver(t_stack **head_a, t_stack **head_b)
 {
-	t_stack	*node_a;
+	t_stack	*node;
+	int		count;
 
+	count = stack_count(*head_a);
 	pb(head_a, head_b);
 	pb(head_a, head_b);
 	while (stack_count(*head_a) > 3)
 	{
 		target(*head_a, *head_b);
 		cost(*head_a, *head_b);
-		node_a = to_move(*head_a);
-		mover(node_a, head_a, head_b);
+		node = to_move(*head_a);
+		mover(node, head_a, head_b);
 	}
 	*head_a = solve_3(*head_a);
+	while (stack_count(*head_a) < count)
+	{
+		target(*head_b, *head_a);
+		cost(*head_b, *head_a);
+		node = to_move(*head_b);
+		mover_b(node, head_b, head_a);
+	}
+	ft_printf("stack A : %d", stack_count(*head_a));
 }
