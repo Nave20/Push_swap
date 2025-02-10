@@ -34,7 +34,6 @@ void	to_head(t_stack *head_a)
 			node_a -> n_moves = node_a -> to_head;
 		else
 			node_a -> p_moves = node_a -> to_head;
-		node_a -> to_head;
 		node_a = node_a -> up2down;
 	}
 }
@@ -52,22 +51,21 @@ void	cost_logic(t_stack *node_a)
 	t_stack	*target;
 
 	target = node_a -> target;
-	if (node_a -> p_moves > 0 && target -> n_moves < 0
-			|| node_a -> n_moves < 0 && target -> p_moves > 0)
+	if ((node_a -> p_moves > 0 && target -> n_moves < 0)
+			|| (node_a -> n_moves < 0 && target -> p_moves > 0))
 	{
 		node_a -> cost = node_a -> p_moves + (node_a ->n_moves) * -1
 			+ (target -> n_moves) * -1 + target -> p_moves;
 	}
 	else if (node_a -> p_moves > 0 || target -> p_moves > 0)
 		node_a -> cost = greatest(node_a ->p_moves, target->p_moves);
-	else //if (node_a -> n_moves < 0 || target -> n_moves < 0)
+	else
 		node_a -> cost = smallest(node_a ->n_moves, target->n_moves) * -1;
 }
 
 void	cost(t_stack *head_a, t_stack *head_b)
 {
 	t_stack	*node_a;
-	t_stack	*target;
 
 	to_head(head_a);
 	to_head(head_b);

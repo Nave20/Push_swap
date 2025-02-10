@@ -18,9 +18,10 @@ int	main(int argc, char **argv)
 {
 	t_stack	*head_a;
 	t_stack *head_b;
-	t_stack *ptr;
-	t_stack	*target2;
+	int		test;
 
+	test = argc;
+	test += test;
 	head_b = NULL;
 	if (!argv[1])
 		return (ft_printf("error\n"));
