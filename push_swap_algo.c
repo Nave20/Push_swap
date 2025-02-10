@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 #include "push_swap.h"
 
 int	up_or_down(t_stack *node_a)
@@ -114,15 +116,24 @@ void	solver(t_stack **head_a, t_stack **head_b)
 		target(*head_a, *head_b);
 		cost(*head_a, *head_b);
 		node = to_move(*head_a);
+		// ft_printf("to move -> %d\n", node -> content);
+		// ft_printf("n_moves -> %d\n", node -> n_moves);
+		// ft_printf("p_moves -> %d\n", node -> p_moves);
+		// 	printer(*head_a);
+		// 	ft_printf("\n");
+		// 	target(*head_b, *head_a);
+		// 	cost(*head_b, *head_a);
+		// 	printer(*head_b);
 		mover(node, head_a, head_b);
 	}
 	*head_a = solve_3(*head_a);
-	while (stack_count(*head_a) < count)
-	{
-		target(*head_b, *head_a);
-		cost(*head_b, *head_a);
-		node = to_move(*head_b);
-		mover_b(node, head_b, head_a);
-	}
-	ft_printf("stack A : %d", stack_count(*head_a));
+	target(*head_b, *head_a);
+	cost(*head_b, *head_a);
+	// while (stack_count(*head_a) < count)
+	// {
+	// 	target(*head_b, *head_a);
+	// 	cost(*head_b, *head_a);
+	// 	node = to_move(*head_b);
+	// 	mover_b(node, head_b, head_a);
+	// }
 }

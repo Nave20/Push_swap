@@ -15,13 +15,22 @@
 void	printer(t_stack *head)
 {
 	t_stack	*ptr;
+	t_stack	*target;
 
 	ptr = head;
-	ft_printf("%d\n", ptr ->content);
+	target = ptr -> target;
+	ft_printf("%d", ptr ->content);
+	ft_printf(" -> %d", target -> content);
+	ft_printf(" | cost : %d", ptr -> cost);
+	ft_printf(" | to head : %d\n", ptr -> to_head);
 	ptr = ptr -> up2down;
 	while (ptr != head)
 	{
-		ft_printf("%d\n", ptr ->content);
+		target = ptr -> target;
+		ft_printf("%d", ptr ->content);
+		ft_printf(" -> %d", target -> content);
+		ft_printf(" | cost : %d", ptr -> cost);
+		ft_printf(" | to head : %d\n", ptr -> to_head);
 		ptr = ptr -> up2down;
 	}
 }
@@ -84,4 +93,19 @@ int	greatest(int a, int b)
 		return (a);
 	else
 		return (b);
+}
+
+void	moves_reset(t_stack *head_a)
+{
+	t_stack	*node;
+
+	head_a -> n_moves = 0;
+	head_a -> p_moves = 0;
+	node = head_a -> up2down;
+	while (node != head_a)
+	{
+		node -> n_moves = 0;
+		node -> p_moves = 0;
+		node = node -> up2down;
+	}
 }

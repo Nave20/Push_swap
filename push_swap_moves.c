@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 #include "push_swap.h"
 
 t_stack	*reverse_rotate(t_stack *head)

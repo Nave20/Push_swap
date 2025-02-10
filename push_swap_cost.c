@@ -22,6 +22,7 @@ void	to_head(t_stack *head_a)
 
 	node_a = head_a -> up2down;
 	stack = stack_count(head_a);
+	moves_reset(head_a);
 	while (node_a != head_a)
 	{
 		index = stack_index(head_a, node_a);
