@@ -43,8 +43,8 @@ int	numbers_only(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (ft_isdigit(argv[i][j]) != 1)
-				return (0);
+			if (ft_isdigit(argv[i][j]) != 1 && argv[i][j] != '-')
+				return (ft_printf("%c", argv[i][j]), 0);
 			j++;
 		}
 		i++;

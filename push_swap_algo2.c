@@ -80,3 +80,20 @@ void	mover_b(t_stack *node_a, t_stack **head_a, t_stack **head_b)
 		pa(head_a, head_b);
 	}
 }
+
+int	rev_checker(t_stack *head)
+{
+	t_stack	*ptr;
+	t_stack	*ptr2;
+
+	ptr = head -> down2up;
+	ptr2 = head;
+	while (ptr != head)
+	{
+		if (ptr2 -> content > ptr -> content)
+			return (0);
+		ptr2 = ptr;
+		ptr = ptr -> down2up;
+	}
+	return (1);
+}
