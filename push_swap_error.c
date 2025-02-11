@@ -31,3 +31,23 @@ int	stack_no_rep(t_stack *head)
 	}
 	return (1);
 }
+
+int	numbers_only(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]) != 1)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
