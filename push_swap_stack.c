@@ -41,6 +41,8 @@ t_stack	*new_stack(char **argv)
 	while (argv[++i])
 	{
 		temp = next_up(ft_atoi(argv[i]), next);
+		if (temp == NULL)
+			return (stack_killer(new), NULL);
 		next -> up2down = temp;
 		next = temp;
 	}

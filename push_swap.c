@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 	if (numbers_only(argv) != 1)
 		return (ft_printf("error\n"));
 	head_a = new_stack(argv);
+	if (head_a == NULL)
+		return (ft_printf("error\n"));
 	if (stack_no_rep(head_a) != 1)
 		return (stack_killer(head_a), ft_printf("error\n"));
 	if (checker(head_a) == 1)
