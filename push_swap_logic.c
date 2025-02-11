@@ -25,7 +25,7 @@ t_stack	*solve_3(t_stack *head)
 		ra(&head);
 	else if (checker(ptr2) == 1)
 		rra(&head);
-	else if (ptr -> content < head -> content && ptr -> content < ptr2 -> content)
+	else if (ptr->content < head -> content && ptr->content < ptr2->content)
 		sa(&head);
 	else if (head -> content > ptr -> content)
 	{

@@ -52,7 +52,7 @@ void	cost_logic(t_stack *node_a)
 
 	target = node_a -> target;
 	if ((node_a -> p_moves > 0 && target -> n_moves < 0)
-			|| (node_a -> n_moves < 0 && target -> p_moves > 0))
+		|| (node_a -> n_moves < 0 && target -> p_moves > 0))
 	{
 		node_a -> cost = node_a -> p_moves + (node_a ->n_moves) * -1
 			+ (target -> n_moves) * -1 + target -> p_moves;
@@ -81,7 +81,7 @@ void	cost(t_stack *head_a, t_stack *head_b)
 t_stack	*to_move(t_stack *head_a)
 {
 	t_stack	*node_a;
-	t_stack *to_move;
+	t_stack	*to_move;
 
 	to_move = head_a;
 	node_a = head_a -> up2down;

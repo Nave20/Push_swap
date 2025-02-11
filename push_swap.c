@@ -17,7 +17,7 @@
 int	main(int argc, char **argv)
 {
 	t_stack	*head_a;
-	t_stack *head_b;
+	t_stack	*head_b;
 	int		test;
 
 	test = argc;
@@ -31,9 +31,6 @@ int	main(int argc, char **argv)
 	if (checker(head_a) == 1)
 		return (stack_killer(head_a), 0);
 	solver(&head_a, &head_b);
-	// printer(head_a);
-	// ft_printf("\n");
-	// printer(head_b);
 	stack_killer(head_a);
 	return (0);
 }
