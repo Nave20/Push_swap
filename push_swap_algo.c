@@ -126,6 +126,5 @@ void	solver(t_stack **head_a, t_stack **head_b)
 		node = to_move(*head_b);
 		mover_b(node, head_b, head_a);
 	}
-	while (checker(*head_a) != 1)
-		ra(head_a);
+	last_sort(head_a);
 }

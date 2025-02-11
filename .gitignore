@@ -9,3 +9,5 @@ main.c
 visualizer
 imgui.ini
 OBJS
+push_swap_tester
+push_swap
