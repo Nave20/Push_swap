@@ -12,28 +12,28 @@
 
 #include "push_swap.h"
 
-void	printer(t_stack *head)
-{
-	t_stack	*ptr;
-	t_stack	*target;
-
-	ptr = head;
-	target = ptr -> target;
-	ft_printf("%d", ptr ->content);
-	ft_printf(" -> %d", target -> content);
-	ft_printf(" | cost : %d", ptr -> cost);
-	ft_printf(" | to head : %d\n", ptr -> to_head);
-	ptr = ptr -> up2down;
-	while (ptr != head)
-	{
-		target = ptr -> target;
-		ft_printf("%d", ptr ->content);
-		ft_printf(" -> %d", target -> content);
-		ft_printf(" | cost : %d", ptr -> cost);
-		ft_printf(" | to head : %d\n", ptr -> to_head);
-		ptr = ptr -> up2down;
-	}
-}
+// void	printer(t_stack *head)
+// {
+// 	t_stack	*ptr;
+// 	t_stack	*target;
+//
+// 	ptr = head;
+// 	target = ptr -> target;
+// 	ft_printf("%d", ptr ->content);
+// 	ft_printf(" -> %d", target -> content);
+// 	ft_printf(" | cost : %d", ptr -> cost);
+// 	ft_printf(" | to head : %d\n", ptr -> to_head);
+// 	ptr = ptr -> up2down;
+// 	while (ptr != head)
+// 	{
+// 		target = ptr -> target;
+// 		ft_printf("%d", ptr ->content);
+// 		ft_printf(" -> %d", target -> content);
+// 		ft_printf(" | cost : %d", ptr -> cost);
+// 		ft_printf(" | to head : %d\n", ptr -> to_head);
+// 		ptr = ptr -> up2down;
+// 	}
+// }
 
 t_stack	*next_up(int content, t_stack *down2up)
 {
