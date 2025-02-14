@@ -26,12 +26,14 @@ void	stack_rounder(t_stack *head)
 	ptr -> up2down = head;
 }
 
-t_stack	*new_stack(char **argv, int i)
+t_stack	*new_stack(char **argv)
 {
 	t_stack	*new;
 	t_stack	*temp;
 	t_stack	*next;
+	int		i;
 
+	i = 1;
 	new = next_up(ft_atoi(argv[i]), NULL);
 	if (!new)
 		return (NULL);

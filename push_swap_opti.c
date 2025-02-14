@@ -61,3 +61,28 @@ void	last_sort(t_stack **head_a)
 		}
 	}
 }
+
+t_stack	*new_stack_2(char **argv)
+{
+	t_stack	*new;
+	t_stack	*temp;
+	t_stack	*next;
+	int		i;
+
+	i = 0;
+	new = next_up(ft_atoi(argv[i]), NULL);
+	if (!new)
+		return (NULL);
+	next = new;
+	while (argv[++i])
+	{
+		temp = next_up(ft_atoi(argv[i]), next);
+		if (temp == NULL)
+			return (stack_killer(new), NULL);
+		next -> up2down = temp;
+		next = temp;
+	}
+	next -> up2down = new;
+	new -> down2up = next;
+	return (new);
+}

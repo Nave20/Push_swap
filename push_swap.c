@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*head_a;
 	t_stack	*head_b;
+	head_b = NULL;
 
 	if (!argv[1])
 		return (ft_printf("error\n"));

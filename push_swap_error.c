@@ -61,10 +61,8 @@ t_stack	*enter(char **argv, int argc)
 	else
 	{
 		if (numbers_only(argv) != 1)
-		{
 			return (NULL);
-		}
-		head_a = new_stack(argv, 1);
+		head_a = new_stack(argv);
 	}
 	return (head_a);
 }
@@ -93,7 +91,7 @@ t_stack	*spliter(char **argv)
 	{
 		return (NULL);
 	}
-	head_a = new_stack(output, 0);
+	head_a = new_stack_2(output);
 	ft_die(output);
 	if (head_a == NULL)
 		return (NULL);

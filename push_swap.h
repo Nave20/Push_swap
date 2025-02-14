@@ -35,7 +35,7 @@ int		ft_printf(const char *s, ...);
 long	ft_isdigit(long c);
 char	**ft_split(char const *s, char c);
 
-t_stack	*new_stack(char **argv, int i);
+t_stack	*new_stack(char **argv);
 void	stack_killer(t_stack *head);
 int		stack_count(t_stack *head);
 t_stack	*stack_extract(t_stack *head);
@@ -93,5 +93,6 @@ int		rev_checker(t_stack *head);
 void	target_second(t_stack *head_a, t_stack *head_b);
 
 void	last_sort(t_stack **head_a);
+t_stack	*new_stack_2(char **argv);
 
 #endif
