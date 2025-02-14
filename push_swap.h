@@ -35,7 +35,7 @@ int		ft_printf(const char *s, ...);
 long	ft_isdigit(long c);
 char	**ft_split(char const *s, char c);
 
-t_stack	*new_stack(char **argv);
+t_stack	*new_stack(char **argv, int i);
 void	stack_killer(t_stack *head);
 int		stack_count(t_stack *head);
 t_stack	*stack_extract(t_stack *head);
@@ -60,6 +60,8 @@ void	target_max(t_stack *node_a, t_stack *head_b);
 
 int		stack_no_rep(t_stack *head);
 int		numbers_only(char **argv);
+t_stack	*spliter(char **argv);
+t_stack	*enter(char **argv, int argc);
 
 void	to_head(t_stack *head_a);
 void	cost(t_stack *head_a, t_stack *head_b);

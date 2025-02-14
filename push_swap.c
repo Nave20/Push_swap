@@ -21,11 +21,7 @@ int	main(int argc, char **argv)
 
 	if (!argv[1])
 		return (ft_printf("error\n"));
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	if (numbers_only(argv) != 1)
-		return (ft_printf("error\n"));
-	head_a = new_stack(argv);
+	head_a = enter(argv, argc);
 	if (head_a == NULL)
 		return (ft_printf("error\n"));
 	if (stack_no_rep(head_a) != 1)

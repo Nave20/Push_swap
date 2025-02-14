@@ -31,7 +31,7 @@ all	:	${NAME}
 
 ${OBJDIR}%.o	:	%.c ${HEADER}
 	mkdir -p ${OBJDIR}
-	${CC} ${FLAGS} -c $< -o $@
+	${CC}  -c $< -o $@
 
 ${NAME}	:	${OBJS} ${LIB}  Makefile
 	cp libft/libft.a libft.a
