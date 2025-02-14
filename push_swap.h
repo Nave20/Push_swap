@@ -45,7 +45,7 @@ t_stack	*rotate(t_stack *head);
 t_stack	*push(t_stack **head_a, t_stack *head_b);
 t_stack	*swap(t_stack *head);
 
-// void	printer(t_stack *head);
+void	printer(t_stack *head);
 t_stack	*next_up(int content, t_stack *down2up);
 int		stack_index(t_stack *head, t_stack *node);
 int		checker(t_stack *head);
@@ -86,6 +86,7 @@ void	n_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 void	p_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 void	mover_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 int		rev_checker(t_stack *head);
+void	order_last(t_stack **head_a);
 
 void	target_second(t_stack *head_a, t_stack *head_b);
 

@@ -119,8 +119,6 @@ void	solver(t_stack **head_a, t_stack **head_b)
 		mover(node, head_a, head_b);
 	}
 	*head_a = solve_3(*head_a);
-	if (rev_checker(*head_b) == 1)
-		rb(head_b);
 	while (stack_count(*head_a) < count)
 	{
 		target_second(*head_b, *head_a);

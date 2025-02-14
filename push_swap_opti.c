@@ -6,7 +6,7 @@
 /*   By: vpirotti <vpirotti@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 08:17:55 by vpirotti          #+#    #+#             */
-/*   Updated: 2025/02/11 08:17:55 by vpirotti         ###   ########.fr       */
+/*   Updated: 2025/02/14 11:33:15 by vpirotti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,28 @@ t_stack	*find_max(t_stack *head)
 void	last_sort(t_stack **head_a)
 {
 	t_stack	*max;
+	int		i;
 
+	i = 0;
 	max = find_max(*head_a);
-	if (stack_index(*head_a, max) > stack_count(*head_a) / 2)
+	if (stack_index(*head_a, max) > (stack_count(*head_a) / 2))
 	{
 		while (checker(*head_a) != 1)
+		{
 			rra(head_a);
+			i++;
+			if (i == 2500)
+				return;
+		}
 	}
 	else
 	{
 		while (checker(*head_a) != 1)
+		{
 			ra(head_a);
+			i++;
+			if (i == 2500)
+				return;
+		}
 	}
 }
