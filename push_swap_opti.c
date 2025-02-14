@@ -47,7 +47,7 @@ void	last_sort(t_stack **head_a)
 			rra(head_a);
 			i++;
 			if (i == 2500)
-				return;
+				return ;
 		}
 	}
 	else
@@ -57,7 +57,7 @@ void	last_sort(t_stack **head_a)
 			ra(head_a);
 			i++;
 			if (i == 2500)
-				return;
+				return ;
 		}
 	}
 }
