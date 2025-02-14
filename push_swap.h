@@ -33,6 +33,7 @@ typedef struct s_stack
 int		ft_atoi(const char *str);
 int		ft_printf(const char *s, ...);
 long	ft_isdigit(long c);
+char	**ft_split(char const *s, char c);
 
 t_stack	*new_stack(char **argv);
 void	stack_killer(t_stack *head);
@@ -86,7 +87,6 @@ void	n_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 void	p_move_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 void	mover_b(t_stack *node_a, t_stack **head_a, t_stack **head_b);
 int		rev_checker(t_stack *head);
-void	order_last(t_stack **head_a);
 
 void	target_second(t_stack *head_a, t_stack *head_b);
 

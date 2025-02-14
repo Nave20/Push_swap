@@ -18,13 +18,11 @@ int	main(int argc, char **argv)
 {
 	t_stack	*head_a;
 	t_stack	*head_b;
-	int		test;
 
-	test = argc;
-	test += test;
-	head_b = NULL;
 	if (!argv[1])
 		return (ft_printf("error\n"));
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
 	if (numbers_only(argv) != 1)
 		return (ft_printf("error\n"));
 	head_a = new_stack(argv);
@@ -34,6 +32,11 @@ int	main(int argc, char **argv)
 		return (stack_killer(head_a), ft_printf("error\n"));
 	if (checker(head_a) == 1)
 		return (stack_killer(head_a), 0);
+	if (stack_count(head_a) == 3)
+	{
+		solve_3(head_a);
+		return (stack_killer(head_a), 0);
+	}
 	solver(&head_a, &head_b);
 	stack_killer(head_a);
 	return (0);

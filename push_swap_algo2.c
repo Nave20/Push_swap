@@ -97,18 +97,3 @@ int	rev_checker(t_stack *head)
 	}
 	return (1);
 }
-
-void	order_last(t_stack **head_a)
-{
-	t_stack	*ptr;
-	t_stack	*lst;
-
-	ptr = (*head_a) -> up2down;
-	lst = (*head_a)	-> down2up;
-	if ((*head_a) -> content > ptr -> content
-		&& (*head_a) -> content > lst -> content)
-		rb(head_a);
-	else if ((*head_a) -> content < ptr -> content
-	&& (*head_a) -> content < lst -> content)
-		rb(head_a);
-}

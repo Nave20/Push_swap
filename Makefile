@@ -11,8 +11,7 @@ SOURCES =	push_swap.c 		\
 			push_swap_stack.c	\
 			push_swap_target.c	\
 			push_swap_utils.c	\
-			push_swap_opti.c	\
-			push_swap_case.c
+			push_swap_opti.c
 
 OBJS	=	${SOURCES:%.c=${OBJDIR}%.o}
 
