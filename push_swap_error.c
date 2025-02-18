@@ -87,7 +87,7 @@ t_stack	*spliter(char **argv)
 	t_stack	*head_a;
 
 	output = ft_split(argv[1], ' ');
-	if (numbers_only(output) != 1)
+	if (numbers_only_b(output) != 1)
 	{
 		return (NULL);
 	}

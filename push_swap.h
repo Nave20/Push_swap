@@ -95,4 +95,6 @@ void	target_second(t_stack *head_a, t_stack *head_b);
 void	last_sort(t_stack **head_a);
 t_stack	*new_stack_2(char **argv);
 
+int	numbers_only_b(char **argv);
+
 #endif
