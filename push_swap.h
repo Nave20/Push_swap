@@ -30,7 +30,7 @@ typedef struct s_stack
 	struct s_stack	*target;
 }	t_stack;
 
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		ft_printf(const char *s, ...);
 long	ft_isdigit(long c);
 char	**ft_split(char const *s, char c);

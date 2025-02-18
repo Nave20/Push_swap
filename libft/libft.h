@@ -31,7 +31,7 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		ft_putnbr_fd(long long int n, int fd);
 int		ft_putnbr_base(unsigned long long int nbr, char *base);
 char	*ft_itoa(int n);

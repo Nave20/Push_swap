@@ -21,12 +21,12 @@ int	main(int argc, char **argv)
 
 	head_b = NULL;
 	if (!argv[1])
-		return (ft_printf("error\n"));
+		return ((int) write(2, "Error\n", 6));
 	head_a = enter(argv, argc);
 	if (head_a == NULL)
-		return (ft_printf("error\n"));
+		return ((int) write(2, "Error\n", 6));
 	if (stack_no_rep(head_a) != 1)
-		return (stack_killer(head_a), ft_printf("error\n"));
+		return (stack_killer(head_a), (int) write(2, "Error\n", 6));
 	if (checker(head_a) == 1)
 		return (stack_killer(head_a), 0);
 	if (stack_count(head_a) == 3)
