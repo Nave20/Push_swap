@@ -86,11 +86,11 @@ t_stack	*spliter(char **argv)
 	char	**output;
 	t_stack	*head_a;
 
+	if (argv[1][0] == '\0' || argv[1][0] == ' ')
+		return (NULL);
 	output = ft_split(argv[1], ' ');
 	if (numbers_only_b(output) != 1)
-	{
 		return (NULL);
-	}
 	head_a = new_stack_2(output);
 	ft_die(output);
 	if (head_a == NULL)
