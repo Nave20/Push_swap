@@ -30,7 +30,7 @@ typedef struct s_stack
 	struct s_stack	*target;
 }	t_stack;
 
-long	ft_atoi(const char *str);
+long	ft_atoi(const char *str, int *bool);
 int		ft_printf(const char *s, ...);
 long	ft_isdigit(long c);
 char	**ft_split(char const *s, char c);
@@ -95,6 +95,7 @@ void	target_second(t_stack *head_a, t_stack *head_b);
 void	last_sort(t_stack **head_a);
 t_stack	*new_stack_2(char **argv);
 
-int	numbers_only_b(char **argv);
+int		numbers_only_b(char **argv);
+t_stack	*atoi_checker(char *arg, t_stack *node);
 
 #endif

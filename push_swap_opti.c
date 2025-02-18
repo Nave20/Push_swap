@@ -70,13 +70,13 @@ t_stack	*new_stack_2(char **argv)
 	int		i;
 
 	i = 0;
-	new = next_up(ft_atoi(argv[i]), NULL);
+	new = atoi_checker(argv[i], NULL);
 	if (!new)
 		return (NULL);
 	next = new;
 	while (argv[++i])
 	{
-		temp = next_up(ft_atoi(argv[i]), next);
+		temp = atoi_checker(argv[i], next);
 		if (temp == NULL)
 			return (stack_killer(new), NULL);
 		next -> up2down = temp;

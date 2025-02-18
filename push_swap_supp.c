@@ -38,3 +38,19 @@ int	numbers_only_b(char **argv)
 	}
 	return (1);
 }
+
+t_stack	*atoi_checker(char *arg, t_stack *node)
+{
+	int		nbr;
+	t_stack	*head;
+	int		bool;
+
+	bool = 1;
+	nbr = (int)ft_atoi(arg, &bool);
+	if (bool == -1)
+		return (NULL);
+	head = next_up(nbr, node);
+	if (!head)
+		return (NULL);
+	return (head);
+}
