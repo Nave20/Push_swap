@@ -61,7 +61,7 @@ void	target_max(t_stack *node_a, t_stack *head_b);
 int		stack_no_rep(t_stack *head);
 int		numbers_only(char **argv);
 t_stack	*spliter(char **argv);
-t_stack	*enter(char **argv, int argc);
+t_stack	*enter(char **argv);
 
 void	to_head(t_stack *head_a);
 void	cost(t_stack *head_a, t_stack *head_b);

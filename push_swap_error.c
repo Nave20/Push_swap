@@ -52,18 +52,13 @@ int	numbers_only(char **argv)
 	return (1);
 }
 
-t_stack	*enter(char **argv, int argc)
+t_stack	*enter(char **argv)
 {
 	t_stack	*head_a;
 
-	if (argc == 2)
-		head_a = spliter(argv);
-	else
-	{
-		if (numbers_only(argv) != 1)
-			return (NULL);
-		head_a = new_stack(argv);
-	}
+	if (numbers_only(argv) != 1)
+		return (NULL);
+	head_a = new_stack(argv);
 	return (head_a);
 }
 
