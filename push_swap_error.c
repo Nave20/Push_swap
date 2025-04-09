@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
 #include "push_swap.h"
 
 int	stack_no_rep(t_stack *head)
@@ -43,7 +45,8 @@ int	numbers_only(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (ft_isdigit(argv[i][j]) != 1 && argv[i][j] != '-')
+			if (ft_isdigit(argv[i][j]) != 1 && argv[i][j] != '-'
+				&& argv[i][j] != '+')
 				return (0);
 			j++;
 		}
@@ -56,13 +59,19 @@ t_stack	*enter(char **argv)
 {
 	t_stack	*head_a;
 	int		i;
+	int		j;
 
 	i = 1;
 	if (numbers_only(argv) != 1)
 		return (NULL);
 	while (argv[i])
 	{
-		if (ft_strncmp("-", argv[i], 10) == 0)
+		j = 0;
+		while (argv[i][j] == '-' || argv[i][j] == '+')
+			j++;
+		if (ft_isdigit(argv[i][j]) == 0)
+			return (NULL);
+		if (ft_strlen(argv[i]) == 0)
 			return (NULL);
 		i++;
 	}
