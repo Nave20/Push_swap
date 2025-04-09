@@ -55,9 +55,17 @@ int	numbers_only(char **argv)
 t_stack	*enter(char **argv)
 {
 	t_stack	*head_a;
+	int		i;
 
+	i = 1;
 	if (numbers_only(argv) != 1)
 		return (NULL);
+	while (argv[i])
+	{
+		if (ft_strncmp("-", argv[i], 10) == 0)
+			return (NULL);
+		i++;
+	}
 	head_a = new_stack(argv);
 	return (head_a);
 }
