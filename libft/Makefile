@@ -61,7 +61,7 @@ CC	=	cc
 
 AR	=	ar -rc
 
-FLAGS	=	-Wall -Wextra -Werror -g -fsanitize=address
+FLAGS	=	-Wall -Wextra -Werror
 
 all	:	${NAME}
 
