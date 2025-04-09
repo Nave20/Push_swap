@@ -42,7 +42,11 @@ t_stack	*new_stack(char **argv)
 	{
 		temp = atoi_checker(argv[i], next);
 		if (temp == NULL)
+		{
+			next -> up2down = new;
+			new -> down2up = next;
 			return (stack_killer(new), NULL);
+		}
 		next -> up2down = temp;
 		next = temp;
 	}

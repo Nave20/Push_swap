@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 		return (error(head_a), 0);
 	if (checker(head_a) == 1)
 		return (stack_killer(head_a), 0);
-	if (stack_count(head_a) == 3 || stack_count(head_a) == 5)
+	if (stack_count(head_a) == 3 || stack_count(head_a) == 2)
 	{
 		two_three(head_a);
 		return (0);

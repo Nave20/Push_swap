@@ -18,9 +18,9 @@ int	stack_no_rep(t_stack *head)
 	t_stack	*ptr2;
 
 	ptr = head -> up2down;
-	ptr2 = ptr -> up2down;
 	while (ptr != head)
 	{
+		ptr2 = ptr -> up2down;
 		while (ptr2 != ptr)
 		{
 			if (ptr -> content == ptr2 -> content)
